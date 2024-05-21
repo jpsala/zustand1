@@ -1,0 +1,49 @@
+:root {
+  --header-height: 3rem;
+  --footer-height: 3rem;
+  --bg-color: #3b82f6;
+  --color: #ffffff;
+}
+
+/* Use box-sizing: border-box to include padding and border in an element's total width and height */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Combined the common styles of header and footer into one rule set */
+header, footer {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--color);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  top: 0;
+  height: var(--header-height);
+}
+
+footer {
+  bottom: 0;
+  height: var(--footer-height);
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  margin-top: var(--header-height);
+  margin-bottom: var(--footer-height);
+  background-color: #fffbeb;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+}
